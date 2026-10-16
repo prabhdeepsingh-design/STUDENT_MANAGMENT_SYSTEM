@@ -23,11 +23,12 @@ function details(){
 
 $choice ="";
 
-while($choice!=4){
+while($choice!=5){
     echo "1.enter student details".PHP_EOL;
     echo "2.Display all  students".PHP_EOL;
     echo "3.FIND STUDENT".PHP_EOL;
-    echo "4.EXIT ".PHP_EOL;
+    echo "4.DLT STUDENT ".PHP_EOL;
+    echo "5.EXIT ".PHP_EOL;
     $choice = trim(fgets(STDIN));
     if($choice==1){
         $manager->addStudent(details());
@@ -38,9 +39,14 @@ while($choice!=4){
     elseif($choice==3){
         echo "Enter student ID to find: ";
         $id = (int) trim(fgets(STDIN));
-        $manager->findStudent($id);
+        $manager->fst($id);
     }
-    elseif($choice==4){echo "EXITING THE PROGRAM ".PHP_EOL;}
+    elseif($choice==4){
+         echo "Enter student ID to find: ";
+        $id = (int) trim(fgets(STDIN));
+        $manager->dst($id);
+    }
+    elseif($choice==5){echo "EXITING THE PROGRAM ".PHP_EOL;}
     else{echo "Invalid choice"; }
 }
 

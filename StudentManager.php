@@ -30,7 +30,7 @@ class StudentManager{
         }
     }   
     
-public function findStudent($id) {
+public function fst($id) {
     foreach ($this->student as $student) {
         if ($student->id == $id) {
             echo "Student Found!" . PHP_EOL;
@@ -44,6 +44,19 @@ public function findStudent($id) {
 
     echo "Student not found!" . PHP_EOL;
 }
+
+public function dst($id) {
+    foreach ($this->student as $index => $student) {
+        if ($student->id == $id) {
+            unset($this->student[$index]);
+            echo "Student deleted successfully...........!" . PHP_EOL;
+            return;
+        }
+    }
+
+    echo "Student not found!" . PHP_EOL;
+}
+
  
     
 
