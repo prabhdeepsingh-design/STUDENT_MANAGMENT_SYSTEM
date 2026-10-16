@@ -28,7 +28,23 @@ class StudentManager{
         
         
         }
-    }    
+    }   
+    
+public function findStudent($id) {
+    foreach ($this->student as $student) {
+        if ($student->id == $id) {
+            echo "Student Found!" . PHP_EOL;
+            echo "Student ID: " . $student->id . PHP_EOL;
+            echo "Student Name: " . $student->name . PHP_EOL;
+            echo "Student Age: " . $student->age . PHP_EOL;
+            echo "Student Course: " . $student->course . PHP_EOL;
+            return;
+        }
+    }
+
+    echo "Student not found!" . PHP_EOL;
+}
+ 
     
 
 }
